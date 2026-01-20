@@ -1,7 +1,7 @@
 [project]
 name = "movie-parser"
 version = "0.1.0"
-description = "Add your description here"
+description = "Kinopoisk top movies parser with Excel export"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = ["openpyxl>=3.1.0"]

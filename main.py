@@ -1,9 +1,8 @@
-#!/usr/bin/env python3
-"""Kinopoisk top movies parser."""
-
 import sys
+from pathlib import Path
 
 from src.config import Settings
+from src.exporters import ExcelExporter
 from src.parsers import KinopoiskParser
 from src.services import MovieService
 
@@ -17,6 +16,11 @@ def main() -> int:
 
         movies = service.get_top_movies(limit=10)
         print(service.display_movies(movies))
+
+        output_path = Path("top_movies.xlsx")
+        exporter = ExcelExporter()
+        exporter.export(movies, output_path)
+        print(f"\nExported to {output_path}")
 
         return 0
     except Exception as e:

@@ -5,8 +5,6 @@ from src.entities import Movie
 
 
 class BaseParser(ABC):
-    """Abstract base parser for movie websites."""
-
     @abstractmethod
     def get_top_movies(self, limit: int = 10) -> Sequence[Movie]:
         """Fetch top movies from the source."""

@@ -5,7 +5,7 @@ from pathlib import Path
 
 @dataclass(frozen=True, slots=True)
 class Settings:
-    """Application settings loaded from environment."""
+    """Application settings loaded from env."""
 
     base_url: str
     api_key: str
